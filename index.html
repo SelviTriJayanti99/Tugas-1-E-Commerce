@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d1117">
+<title>Loka Boardgame Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+    </span>
+    <span class="logo-text"><b>Loka</b><small>Boardgame Cafe</small></span>
+  </div>
+  <nav id="nav"></nav>
+</header>
+<main>
+  <p class="boot-err" id="boot-err" role="alert" hidden></p>
+  <section id="v-home">
+    <div class="hero">
+      <span class="float f1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="float f2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+      <span class="float f3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="float f4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+
+      <div class="hero-body">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+          Boardgame Cafe #1 di Kota
+        </span>
+        <h1>Makan, Minum &amp; <span>Main Bersama</span></h1>
+        <p>Loka Boardgame Cafe: pesan menu, booking meja, dan sewa boardgame dari satu akun.</p>
+        <div class="acts"><button id="h-reg">Buat akun</button><button class="ghost" id="h-log">Masuk</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-register" class="auth card" hidden>
+    <h2>Buat akun</h2>
+    <form id="f-reg" novalidate>
+      <label for="r-name">Nama lengkap</label><input id="r-name" autocomplete="name">
+      <label for="r-email">Email</label><input id="r-email" type="email" autocomplete="email">
+      <label for="r-phone">No. WhatsApp</label><input id="r-phone" type="tel" autocomplete="tel">
+      <label for="r-pass">Kata sandi (min. 6 karakter)</label><input id="r-pass" type="password" autocomplete="new-password">
+      <label for="r-pass2">Ulangi kata sandi</label><input id="r-pass2" type="password" autocomplete="new-password">
+      <p class="msg" id="r-msg" role="alert"></p>
+      <button type="submit">Daftar</button>
+    </form>
+    <p class="sw">Sudah punya akun? <a id="to-login" tabindex="0">Masuk</a></p>
+  </section>
+
+  <section id="v-login" class="auth card" hidden>
+    <h2>Masuk</h2>
+    <form id="f-log" novalidate>
+      <label for="l-email">Email</label><input id="l-email" type="email" autocomplete="email">
+      <label for="l-pass">Kata sandi</label><input id="l-pass" type="password" autocomplete="current-password">
+      <p class="msg" id="l-msg" role="alert"></p>
+      <button type="submit">Masuk</button>
+    </form>
+    <p class="sw">Belum punya akun? <a id="to-reg" tabindex="0">Daftar</a></p>
+  </section>
+
+  <section id="v-dash" hidden>
+    <h2 id="d-hi"></h2>
+    <p class="lead">Kelola pesanan, booking, dan profil kamu.</p>
+    <div class="grid">
+      <div class="card stat"><b id="s-ord">0</b>Pesanan</div>
+      <div class="card stat"><b id="s-book">0</b>Booking meja</div>
+      <div class="card stat"><b id="s-since">-</b>Anggota sejak</div>
+    </div>
+    <div class="tabs" role="tablist">
+      <button role="tab" data-t="order" aria-selected="true">Pesan menu</button>
+      <button role="tab" data-t="book" aria-selected="false">Booking meja</button>
+      <button role="tab" data-t="hist" aria-selected="false">Riwayat</button>
+      <button role="tab" data-t="prof" aria-selected="false">Profil</button>
+    </div>
+
+    <div id="t-order" class="card">
+      <h3>Pesan menu</h3>
+      <label for="o-item">Menu</label>
+      <select id="o-item"></select>
+      <label for="o-qty">Jumlah</label><input id="o-qty" type="number" min="1" value="1">
+      <p class="msg" id="o-msg" role="status"></p>
+      <button id="o-btn">Pesan</button>
+    </div>
+
+    <div id="t-book" class="card" hidden>
+      <h3>Booking meja</h3>
+      <label for="b-date">Tanggal</label><input id="b-date" type="date">
+      <label for="b-time">Jam</label><input id="b-time" type="time" value="16:00">
+      <label for="b-ppl">Jumlah orang</label><input id="b-ppl" type="number" min="1" max="12" value="4">
+      <p class="msg" id="b-msg" role="status"></p>
+      <button id="b-btn">Booking meja</button>
+    </div>
+
+    <div id="t-hist" class="card" hidden>
+      <h3>Riwayat</h3>
+      <div class="tw"><table><thead><tr><th>Jenis</th><th>Detail</th><th>Total / Info</th><th>Status</th><th>Waktu</th><th></th></tr></thead><tbody id="h-body"></tbody></table></div>
+      <p class="empty" id="h-empty">Belum ada riwayat. Mulai dengan pesan menu atau booking meja.</p>
+    </div>
+
+    <div id="t-prof" class="card" hidden>
+      <h3>Profil</h3>
+      <label for="p-name">Nama lengkap</label><input id="p-name">
+      <label for="p-email">Email</label><input id="p-email" disabled>
+      <label for="p-phone">No. WhatsApp</label><input id="p-phone" type="tel">
+      <p class="msg" id="p-msg" role="status"></p>
+      <button id="p-btn">Simpan perubahan</button>
+    </div>
+  </section>
+
+  <section id="v-admin" hidden>
+    <h2>Dashboard admin</h2>
+    <p class="lead" id="a-hi"></p>
+    <div class="grid">
+      <div class="card stat"><b id="st-users">0</b>Pelanggan</div>
+      <div class="card stat"><b id="st-orders">0</b>Total pesanan</div>
+      <div class="card stat"><b id="st-books">0</b>Total booking</div>
+      <div class="card stat"><b id="st-rev">Rp0</b>Pendapatan (pesanan selesai)</div>
+      <div class="card stat"><b id="st-new">0</b>Pesanan baru</div>
+      <div class="card stat"><b id="st-pend">0</b>Booking menunggu</div>
+      <div class="card stat"><b id="st-login">0</b>Login hari ini</div>
+    </div>
+    <div class="tabs" role="tablist">
+      <button role="tab" data-a="orders" aria-selected="true">Pesanan</button>
+      <button role="tab" data-a="books" aria-selected="false">Booking</button>
+      <button role="tab" data-a="menu" aria-selected="false">Menu</button>
+      <button role="tab" data-a="users" aria-selected="false">Pengguna</button>
+      <button role="tab" data-a="logins" aria-selected="false">Riwayat login</button>
+    </div>
+
+    <div id="ap-orders" class="card">
+      <h3>Pesanan</h3>
+      <div class="tw"><table><thead><tr><th>ID</th><th>Pelanggan</th><th>Pesanan</th><th>Total</th><th>Status</th><th>Waktu</th></tr></thead><tbody id="ao-body"></tbody></table></div>
+    </div>
+
+    <div id="ap-books" class="card" hidden>
+      <h3>Booking meja</h3>
+      <div class="tw"><table><thead><tr><th>ID</th><th>Pelanggan</th><th>Jadwal</th><th>Orang</th><th>Status</th></tr></thead><tbody id="ab-body"></tbody></table></div>
+    </div>
+
+    <div id="ap-menu" class="card" hidden>
+      <h3>Kelola menu</h3>
+      <label for="m-name">Nama menu</label><input id="m-name" maxlength="100">
+      <label for="m-price">Harga (Rp)</label><input id="m-price" type="number" min="1">
+      <label class="check" for="m-active"><input id="m-active" type="checkbox" checked> Tampilkan di menu pelanggan</label>
+      <div class="acts2 row"><button id="m-btn">Tambah menu</button><button class="ghost" id="m-cancel" hidden>Batal</button></div>
+      <div class="tw"><table><thead><tr><th>Nama</th><th>Harga</th><th>Status</th><th></th></tr></thead><tbody id="am-body"></tbody></table></div>
+    </div>
+
+    <div id="ap-users" class="card" hidden>
+      <h3>Pengguna</h3>
+      <div class="tw"><table><thead><tr><th>Nama</th><th>Email</th><th>WhatsApp</th><th>Peran</th><th>Pesanan</th><th>Booking</th><th></th></tr></thead><tbody id="au-body"></tbody></table></div>
+    </div>
+
+    <div id="ap-logins" class="card" hidden>
+      <h3>Riwayat login</h3>
+      <div class="tw"><table><thead><tr><th>Waktu</th><th>Nama</th><th>Email</th><th>Status</th><th>IP</th><th>Perangkat</th></tr></thead><tbody id="al-body"></tbody></table></div>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="script.js"></script>
+</body>
+</html>

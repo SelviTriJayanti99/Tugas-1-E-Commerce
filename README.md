@@ -1,29 +1,71 @@
 # Loka Boardgame Cafe: PHP + MySQL (phpMyAdmin)
 
-Data disimpan di database MySQL (`loka_cafe`), bisa dilihat dan diubah lewat phpMyAdmin.
+**Kelompok 4**
+- Azzika
+- Miska
+- Kia
+- Selvi
 
-## Struktur folder
-```
+Data disimpan di database MySQL (`loka_cafe`) dan dapat dilihat serta dikelola melalui phpMyAdmin.
+
+## Struktur Folder
+
+```text
 loka-web/
-  index.html  style.css  script.js
-  database.sql   <- diimpor ke phpMyAdmin
-  setup.php      <- buat akun admin (hapus setelah dipakai)
+  index.html
+  style.css
+  script.js
+  database.sql
+  setup.php
   api/
-    config.php  bootstrap.php  auth.php  user.php  admin.php
+    config.php
+    bootstrap.php
+    auth.php
+    user.php
+    admin.php
 ```
 
-## Langkah menjalankan (XAMPP)
-1. Nyalakan **Apache** dan **MySQL** di XAMPP Control Panel.
+## Langkah Menjalankan Website (XAMPP)
+
+1. Nyalakan **Apache** dan **MySQL** melalui XAMPP Control Panel.
 2. Salin folder `loka-web` ke `C:\xampp\htdocs\`.
-3. Buka http://localhost/phpmyadmin, tab **Import**, pilih `database.sql`, klik **Go**.
-4. Jika MySQL kamu punya kata sandi, ubah `api/config.php`.
-5. Buka http://localhost/loka-web/setup.php sekali untuk membuat admin, lalu **hapus setup.php**.
-6. Buka http://localhost/loka-web/
+3. Buka `http://localhost/phpmyadmin`, pilih tab **Import**, pilih file `database.sql`, lalu klik **Go**.
+4. Jika MySQL menggunakan kata sandi, sesuaikan konfigurasi pada `api/config.php`.
+5. Buka `http://localhost/loka-web/setup.php` satu kali untuk membuat akun admin, lalu hapus `setup.php` setelah selesai digunakan.
+6. Buka website melalui `http://localhost/loka-web/`.
 
-Akun admin awal: `admin@loka.id` / `admin123` (ganti kata sandinya di `setup.php` sebelum dijalankan).
+**Akun admin awal:**
+- Email: `admin@loka.id`
+- Kata sandi: `admin123`
 
-Catatan: jangan buka dengan klik dua kali `index.html` atau Live Server, karena PHP tidak jalan di sana.
+Ganti kata sandi bawaan sebelum digunakan. Hapus atau nonaktifkan skrip setup setelah akun admin berhasil dibuat.
 
-## Fitur
-- Pelanggan: daftar, masuk, pesan menu, booking meja, batalkan, riwayat, edit profil.
-- Admin: statistik, ubah status pesanan dan booking, kelola menu, hapus pelanggan, riwayat login.
+**Catatan:** Jangan membuka website dengan mengeklik dua kali `index.html` atau menggunakan Live Server karena PHP tidak berjalan melalui metode tersebut.
+
+## Fitur Website
+
+### 1. Pelanggan (User)
+- Registrasi dan login akun.
+- Melihat serta memesan menu.
+- Melakukan booking meja.
+- Membatalkan pesanan atau booking.
+- Melihat riwayat pesanan.
+- Mengedit profil akun.
+
+### 2. Admin
+- Melihat statistik website.
+- Mengubah status pesanan dan booking.
+- Mengelola menu.
+- Menghapus akun pelanggan.
+- Melihat riwayat login.
+
+## Teknologi yang Digunakan
+- HTML
+- CSS
+- JavaScript
+- PHP
+- MySQL
+- phpMyAdmin
+- XAMPP
+
+**Tujuan proyek:** Mengembangkan website Loka Boardgame Cafe dengan sistem registrasi, login, pemesanan, booking meja, dan dashboard admin yang terhubung dengan database MySQL.
